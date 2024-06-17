@@ -53,7 +53,7 @@ Content-Type: application/json
 
 La réponse contiendra le contenu HTML de la page spécifiée.
 
-<!DOCTYPE html><html>...</html>
+`<!DOCTYPE html><html>...</html>`
 
 ## Notes
 

@@ -61,14 +61,15 @@ La réponse contiendra le contenu HTML de la page spécifiée.
 - Le service utilise Puppeteer pour rendre la page, donc il peut y avoir un certain délai en fonction de la complexité de la page et de la vitesse de votre connexion internet.
 
 **TESTED LIST :**
-Indeed : passed ✅
-Jobteaser : passed ✅
-Linkedin : passed ✅
-welcometothejungle : passed ✅
-la relève : failed ❎
-HelloWork : passed ✅
-l'apec : passed ✅
-StationF jobs : passed ✅
-la bonne alternance : failed ❎
 
-Les tests échouent à cause du site qui ne fournit pas des URLs uniques pour les offres. Le site utilise un routage basé sur l'état de l'application au lieu d'un véritable routage.
+- Indeed : passed ✅
+- Jobteaser : passed ✅
+- Linkedin : passed ✅
+- welcometothejungle : passed ✅
+- la relève : failed ❎
+- HelloWork : passed ✅
+- l'apec : passed ✅
+- StationF jobs : passed ✅
+- la bonne alternance : failed ❎
+
+- Les tests échouent à cause du site qui ne fournit pas des URLs uniques pour les offres. Le site utilise un routage basé sur l'état de l'application au lieu d'un véritable routage.

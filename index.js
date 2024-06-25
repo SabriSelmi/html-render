@@ -10,7 +10,8 @@ app.use(bodyParser.json());
 // Define a GET route
 app.post("/scrape", async (req, res) => {
   const { url } = req.body;
-  const result = await scrape(url);
+  // const result = await scrape(url);
+  const result = "hello world"
   res.send(result)
 });
 

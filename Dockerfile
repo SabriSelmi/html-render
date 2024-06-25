@@ -1,11 +1,29 @@
-FROM ghcr.io/puppeteer/puppeteer:19.11.1
+FROM apify/actor-node-puppeteer-chrome:16
 
-ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true \
-    PUPPETEER_EXECUTABLE_PATH=/usr/bin/google-chrome-stable
+USER root
 
-WORKDIR /usr/src/app
+WORKDIR /app
+
+RUN apt upgrade
+
+RUN wget http://ftp.debian.org/debian/pool/main/libx/libxtst/libxtst6_1.2.3-1_amd64.deb
+
+RUN dpkg -i libxtst6_1.2.3-1_amd64.deb
+
+RUN npm install -g nodemon 
+
+## will install dependencies as local packages
+RUN npm install -g install-local
 
 COPY package*.json ./
-RUN npm install
-COPY . .
-CMD [ "node", "index.js" ]
+
+RUN npm install && npm cache clean --force 
+
+RUN rm -rf /tmp/* \ && rm -rf /root/.cache \ && rm -rf /root/.config/chromium && rm -rf /root/.config/chrome
+
+COPY . . 
+
+EXPOSE 3000
+
+ENTRYPOINT [ "node" ,"." ]
+
